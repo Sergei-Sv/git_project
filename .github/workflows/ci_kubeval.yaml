@@ -1,0 +1,14 @@
+on: [push, pull_request]
+name: Validate
+jobs:
+  kubeval:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        actions_working_dir: ./manifests      
+    steps:
+    - uses: actions/checkout@master
+    - name: test manifests folder
+      uses: instrumenta/kubeval-action@master
+      with: 
+       files: ${{matrix.actions_working_dir}}
