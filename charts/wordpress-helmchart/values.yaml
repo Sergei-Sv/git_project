@@ -1,0 +1,9 @@
+image:
+  repository: sergeis8v/wordpress
+  tag: v5.9
+
+ingress:
+  enabled: true
+  hostname: project.k8s-15.sa
+
+replicaCount: 1  
